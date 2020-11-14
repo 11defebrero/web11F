@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Charlas concertadas - mapa y tabla</title>
+
+<script src="libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.3/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.3/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><img src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
+<style type="text/css">
+
+h1 {
+  color: #00BCB4;
+}
+h2 {
+  color: #00BCB4;
+}
+h3 {
+  color: #00BCB4;
+}
+h4 {
+  color: #00BCB4;
+}
+h5 {
+  color: #00BCB4;
+}
+li {
+  color: #00BCB4;
+}
+</style>
+<div id="charlas-concertadas-en-centros-educativos" class="section level1">
+<h1>Charlas CONCERTADAS en centros educativos</h1>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
+<p>Para ver los centros que han solicitado charla/taller y contactar con ellos pincha <a href="solicitudes_mapa_tabla.html">aquí</a>. Una vez concertada la charla, por favor, envíanos la información a través de <a href="https://11defebrero.org/quieres-anunciar-una-charla-o-actividad">este link</a>.</p>
+<p>Si vas a dar una charla en un centro que no lo había solicitado previamente, también puedes anunciarlo mediante el mismo <a href="https://11defebrero.org/quieres-anunciar-una-charla-o-actividad">link</a>.</p>
+<hr />
+<div id="buscar-en-mapa" class="section level3">
+<h3><a href="#mapa-de-charlas-concertadas">Buscar en mapa</a></h3>
+</div>
+<div id="buscar-en-tabla" class="section level3">
+<h3><a href="#tabla-de-charlas-concertadas">Buscar en tabla</a></h3>
+</div>
+<div id="ver-todas" class="section level3">
+<h3><a href="concertadas_todas.html#detalles" target="_blank">Ver todas</a></h3>
+<hr />
+</div>
+<div id="mapa-de-charlas-concertadas" class="section level3">
+<h3>Mapa de charlas concertadas</h3>
+<p>En este mapa interactivo puedes consultar las charlas concertadas. La localización de los centros en el mapa es aproximada, corresponde al código postal en el que se ubican.</p>
+<p>Si pinchas en cualquier icono podrás acceder a más información sobre cada centro y las charlas concertadas.</p>
+<p>Si tienes problema al visualizar el mapa, por favor, prueba con otro navegador.</p>
+<div id="htmlwidget-d8ada60d72f61a6de087" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d8ada60d72f61a6de087">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[28.4712133,39.21574824,39.87406582,42.34062056,42.36352828,40.96828268,41.14176414,40.66484356,40.36501056,38.2626684,38.86305309,42.60830031,42.39203673,42.14330401,42.14330401,41.99201153,42.21615202,42.25011557,42.22900087,42.19034155,42.22484183,42.81849023],[-16.43630823,-3.644094621,-3.908808843,-3.736123457,-3.634587606,-5.693808543,1.106547751,-3.749782795,-3.699080265,-0.6849032988,-5.899947631,-7.769435893,-8.702209872,-8.79503468,-8.79503468,-8.751238661,-8.696041144,-8.699928084,-8.697068256,-8.702915291,-8.730101402,-1.643895972],{"iconUrl":{"data":"https://raw.githubusercontent.com/11defebrero/assets/main/images/logo_concertadas.png","index":0},"iconWidth":30,"iconHeight":30,"iconAnchorX":15,"iconAnchorY":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<a href='concertadas_todas.html#referencia-C1111095519' target='_self'>IES SAN NICOLAS<\/a><br/>Clàudia Pérez Barrancos<br/>Mujeres en Oceanografía","<a href='concertadas_todas.html#referencia-C1112165814' target='_self'>VIRGEN DE LA SIERRA<\/a><br/>Elisa Fernández Nuñez<br/>Mujeres de Ciencia","<a href='concertadas_todas.html#referencia-C1111095719' target='_self'>CEIP JAIME DE FOXA<\/a><br/>Elisa Fenandez Nuñez<br/>Las Raras en el laboratorio","<a href='concertadas_todas.html#referencia-C1111175629' target='_self'>ESTACION DE LA CIENCIA Y LA TECNOLOGIA BURGOS<\/a><br/>Ileana Greca<br/>Acercar la tecnología a todas las niñas","<a href='concertadas_todas.html#referencia-C1111183054' target='_self'>IES PINTOR LUIS SAEZ<\/a><br/>Belen Alcalde<br/>Experiencias de científicas.","<a href='concertadas_todas.html#referencia-C1111085347' target='_self'>INSTITUTO DE NEUROCIENCIAS DE CASTILLA Y LEON<\/a><br/>María Nieto Sobrino<br/>Lo que nunca me contaron: del aula a la bata.","<a href='concertadas_todas.html#referencia-C1113152418' target='_self'>INSTITUT JOSEP TAPIRO<\/a><br/>Núria Ruiz Morillas<br/>Tu Youyou, la dona que va lluitar científicament contra la malària","<a href='concertadas_todas.html#referencia-C1111151823' target='_self'>CEIP SAN ANDRES HA SOLICITADO CHARLA HACE UNOS DIAS<\/a><br/>Mª De Los Ángeles De La Rubia Romero<br/>La mujer y la niña en la Ciencia","<a href='concertadas_todas.html#referencia-C1113122901' target='_self'>IES ENRIQUE TIERNO GALVAN<\/a><br/>Belén Rodríguez García<br/>La ciencia también es cosa de chicas","<a href='concertadas_todas.html#referencia-C1111200039' target='_self'>IES SIXTO MARCO DE ELCHE<\/a><br/>Ana María Sabater<br/>La historia de científicas ilustres, Experiencias de científicas","<a href='concertadas_todas.html#referencia-C1111213654' target='_self'>IES LUIS CHAMIZO<\/a><br/>Esther Rodríguez González<br/>Venturas y desventuras de la ciencia a través de la Arqueología","<a href='concertadas_todas.html#referencia-C1113102437' target='_self'>IES VAL DO ASMA<\/a><br/>Lourdes Lorenzo<br/>\"A muller e as tecnoloxías da comunicación e a accesibilidade (subtitulación para xordos)\"","<a href='concertadas_todas.html#referencia-C1113131733' target='_self'>IES ILLA DE TAMBO<\/a><br/>Julia Armesto González<br/>Nuevas tecnologías cartográficas para la gestión del medio natural","<a href='concertadas_todas.html#referencia-C1113122254' target='_self'>CEIP HUMBERTO JUANES<\/a><br/>Betty León Fong<br/>Una china estudiando Física en Alemania","<a href='concertadas_todas.html#referencia-C1113134125' target='_self'>IES ESCOLAS PROVAL<\/a><br/>Betty León Fong<br/>El pirata Pata de Palo y los biomateriales","<a href='concertadas_todas.html#referencia-C1113110013' target='_self'>IES ANTON ALONSO RIOS<\/a><br/>Laura Alonso Martínez<br/>Novas tecnoloxías aplicadas á xestión forestal","<a href='concertadas_todas.html#referencia-C1113142640' target='_self'>CEIP PLURILINGÜE LOPE DE VEGA<\/a><br/>Rebeca P. Díaz Redondo<br/>A muller nas telecomunicacións: pasado e presente","<a href='concertadas_todas.html#referencia-C1113102102' target='_self'>COLEGIO APOSTOL SANTIAGO<\/a><br/>Íñigo Cuíñas Gómez<br/>Ciencia y Tecnología por mujeres: ejemplos cercanos","<a href='concertadas_todas.html#referencia-C1113140703' target='_self'>COLEGIO PLURILINGÜE ATALAYA CANTABRIA<\/a><br/>María Gallardo Gómez<br/>Lunas y caras ocultas: mujeres científicas históricas","<a href='concertadas_todas.html#referencia-C1113110828' target='_self'>IES DE BEADE<\/a><br/>Cristina Fernández González E Alba Aguión<br/>\"As mulleres en expediciones científicas internacionais\"","<a href='concertadas_todas.html#referencia-C1113121929' target='_self'>IES SANTA IRENE<\/a><br/>Alejandra Cameselle<br/>A vida nun barco de investigación: Explorando os océanos dende as costas aos abismos mariños","<a href='concertadas_todas.html#referencia-C1112123805' target='_self'>MATERIAL DIDACTICO ACCESIBLE PARA CUALQUIER CENTRO EN CUALQUIER MOMENTO<\/a><br/>Maria Beunza<br/>¿INNOVAR EN CUALQUIER ÁMBITO? \"LO QUE HAY QUE TENER\""],null,{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["IES SAN NICOLAS","VIRGEN DE LA SIERRA","CEIP JAIME DE FOXA","ESTACION DE LA CIENCIA Y LA TECNOLOGIA BURGOS","IES PINTOR LUIS SAEZ","INSTITUTO DE NEUROCIENCIAS DE CASTILLA Y LEON","INSTITUT JOSEP TAPIRO","CEIP SAN ANDRES HA SOLICITADO CHARLA HACE UNOS DIAS","IES ENRIQUE TIERNO GALVAN","IES SIXTO MARCO DE ELCHE","IES LUIS CHAMIZO","IES VAL DO ASMA","IES ILLA DE TAMBO","CEIP HUMBERTO JUANES","IES ESCOLAS PROVAL","IES ANTON ALONSO RIOS","CEIP PLURILINGÜE LOPE DE VEGA","COLEGIO APOSTOL SANTIAGO","COLEGIO PLURILINGÜE ATALAYA CANTABRIA","IES DE BEADE","IES SANTA IRENE","MATERIAL DIDACTICO ACCESIBLE PARA CUALQUIER CENTRO EN CUALQUIER MOMENTO"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[28.4712133,42.81849023],"lng":[-16.43630823,1.106547751]}},"evals":[],"jsHooks":[]}</script>
+<p><br/></p>
+</div>
+<div id="tabla-de-charlas-concertadas" class="section level3">
+<h3>Tabla de charlas concertadas</h3>
+<p>En esta tabla podéis consultar las charlas concertadas por provincia, localidad, nombre del centro, nivel o curso para el que se impartirá la charla, y título de la misma. Notad que podéis filtrar por varios criterios desde la fila superior (aparecerá una <strong>X</strong> en las columnas que tengan el filtro activado).</p>
+<p>Si pincháis en el nombre del centro educativo podréis acceder a más información útil sobre la charla concertada.</p>
+<p><br/></p>
+<div id="htmlwidget-c6220522a65572e86a1e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6220522a65572e86a1e">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["<a href='concertadas_todas.html#referencia-C1111095519' target='_self'>IES SAN NICOLAS<\/a>","<a href='concertadas_todas.html#referencia-C1112165814' target='_self'>VIRGEN DE LA SIERRA<\/a>","<a href='concertadas_todas.html#referencia-C1111095719' target='_self'>CEIP JAIME DE FOXA<\/a>","<a href='concertadas_todas.html#referencia-C1111175629' target='_self'>ESTACION DE LA CIENCIA Y LA TECNOLOGIA BURGOS<\/a>","<a href='concertadas_todas.html#referencia-C1111183054' target='_self'>IES PINTOR LUIS SAEZ<\/a>","<a href='concertadas_todas.html#referencia-C1111085347' target='_self'>INSTITUTO DE NEUROCIENCIAS DE CASTILLA Y LEON<\/a>","<a href='concertadas_todas.html#referencia-C1113152418' target='_self'>INSTITUT JOSEP TAPIRO<\/a>","<a href='concertadas_todas.html#referencia-C1111151823' target='_self'>CEIP SAN ANDRES HA SOLICITADO CHARLA HACE UNOS DIAS<\/a>","<a href='concertadas_todas.html#referencia-C1113122901' target='_self'>IES ENRIQUE TIERNO GALVAN<\/a>","<a href='concertadas_todas.html#referencia-C1111200039' target='_self'>IES SIXTO MARCO DE ELCHE<\/a>","<a href='concertadas_todas.html#referencia-C1111213654' target='_self'>IES LUIS CHAMIZO<\/a>","<a href='concertadas_todas.html#referencia-C1113102437' target='_self'>IES VAL DO ASMA<\/a>","<a href='concertadas_todas.html#referencia-C1113131733' target='_self'>IES ILLA DE TAMBO<\/a>","<a href='concertadas_todas.html#referencia-C1113122254' target='_self'>CEIP HUMBERTO JUANES<\/a>","<a href='concertadas_todas.html#referencia-C1113134125' target='_self'>IES ESCOLAS PROVAL<\/a>","<a href='concertadas_todas.html#referencia-C1113110013' target='_self'>IES ANTON ALONSO RIOS<\/a>","<a href='concertadas_todas.html#referencia-C1113142640' target='_self'>CEIP PLURILINGÜE LOPE DE VEGA<\/a>","<a href='concertadas_todas.html#referencia-C1113102102' target='_self'>COLEGIO APOSTOL SANTIAGO<\/a>","<a href='concertadas_todas.html#referencia-C1113140703' target='_self'>COLEGIO PLURILINGÜE ATALAYA CANTABRIA<\/a>","<a href='concertadas_todas.html#referencia-C1113110828' target='_self'>IES DE BEADE<\/a>","<a href='concertadas_todas.html#referencia-C1113121929' target='_self'>IES SANTA IRENE<\/a>","<a href='concertadas_todas.html#referencia-C1112123805' target='_self'>MATERIAL DIDACTICO ACCESIBLE PARA CUALQUIER CENTRO EN CUALQUIER MOMENTO<\/a>"],["Santa Cruz de Tenerife","Ciudad Real","Toledo","Burgos","Burgos","Salamanca","Tarragona","Madrid","Madrid","Alicante/Alacant","Badajoz","Lugo","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Pontevedra","Navarra"],["38360, SANTA CRUZ DE TENERIFE","13670, VILLARRUBIA DE LOS OJOS","45007, TOLEDO","09001, BURGOS","09007, BURGOS","37007, SALAMANCA","43205, REUS","28770, COLMENAR VIEJO","28041, MADRID","03203, ELCHE","06400, DON BENITO","27500, CHANTADA","36900, MARÍN","36350, NIGRÁN","36350, NIGRÁN","36740, TOMIÑO","36214, VIGO","36207, VIGO","36205, VIGO","36312, VIGO","36211, VIGO","31001, MUNDO :-)"],["4º ESO","3º Primaria, 4º Primaria","6º Primaria","Adultos","4º ESO, 1º Bachillerato","Adultos, Otros","4º ESO","5º Primaria, 6º Primaria","Otros","3º ESO, 4º ESO","3º ESO","4º ESO, 1º Bachillerato","2º Bachillerato","5º Primaria, 6º Primaria","1º Bachillerato, 2º Bachillerato","1º Bachillerato, Formación profesional","6º Primaria","1º Bachillerato","5º Primaria, 6º Primaria","4º ESO","4º ESO, 1º Bachillerato","1º ESO, 2º ESO, 3º ESO, 4º ESO, 1º Bachillerato, 2º Bachillerato, Formación profesional, Adultos"],["Clàudia Pérez Barrancos","Elisa Fernández Nuñez","Elisa Fenandez Nuñez","Ileana Greca","Belen Alcalde","María Nieto Sobrino","Núria Ruiz Morillas","Mª De Los Ángeles De La Rubia Romero","Belén Rodríguez García","Ana María Sabater","Esther Rodríguez González","Lourdes Lorenzo","Julia Armesto González","Betty León Fong","Betty León Fong","Laura Alonso Martínez","Rebeca P. Díaz Redondo","Íñigo Cuíñas Gómez","María Gallardo Gómez","Cristina Fernández González E Alba Aguión","Alejandra Cameselle","Maria Beunza"],["Mujeres en Oceanografía","Mujeres de Ciencia","Las Raras en el laboratorio","Acercar la tecnología a todas las niñas","Experiencias de científicas.","Lo que nunca me contaron: del aula a la bata.","Tu Youyou, la dona que va lluitar científicament contra la malària","La mujer y la niña en la Ciencia","La ciencia también es cosa de chicas","La historia de científicas ilustres, Experiencias de científicas","Venturas y desventuras de la ciencia a través de la Arqueología","\"A muller e as tecnoloxías da comunicación e a accesibilidade (subtitulación para xordos)\"","Nuevas tecnologías cartográficas para la gestión del medio natural","Una china estudiando Física en Alemania","El pirata Pata de Palo y los biomateriales","Novas tecnoloxías aplicadas á xestión forestal","A muller nas telecomunicacións: pasado e presente","Ciencia y Tecnología por mujeres: ejemplos cercanos","Lunas y caras ocultas: mujeres científicas históricas","\"As mulleres en expediciones científicas internacionais\"","A vida nun barco de investigación: Explorando os océanos dende as costas aos abismos mariños","¿INNOVAR EN CUALQUIER ÁMBITO? \"LO QUE HAY QUE TENER\""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Centro<\/th>\n      <th>Provincia<\/th>\n      <th>Localidad<\/th>\n      <th>Nivel<\/th>\n      <th>Ponente<\/th>\n      <th>Título<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<p>Última actualización: 2020-11-14</p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
