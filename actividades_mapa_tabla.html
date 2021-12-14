@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Actividades - mapa y tabla</title>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
+<style type="text/css">
+
+h1 {
+  color: #00BCB4;
+}
+h2 {
+  color: #00BCB4;
+}
+h3 {
+  color: #00BCB4;
+}
+h4 {
+  color: #00BCB4;
+}
+h5 {
+  color: #00BCB4;
+}
+li {
+  color: #00BCB4;
+}
+</style>
+<div id="actividades11f" class="section level1 tabset tabset-fade tabset-pills">
+<h1 class="tabset tabset-fade tabset-pills">Actividades11F</h1>
+<p>Aquí puedes consultar todas las actividades organizadas por librerías, comercios, bibliotecas, empresas, o cualqueir institución distinta a un centro educativo con motivo del <a href="https://11defebrero.org/">Día de la Mujer y la Niña en la Ciencia</a>.</p>
+<p>Las actividades que organizan los centros educativos las puedes consultar en <a href="https://11defebrero.github.io/web11F/centros11f_todos.html">Centros11F</a></p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
+<div id="presenciales" class="section level2">
+<h2>PRESENCIALES</h2>
+<p>Aquí puedes buscar, a modo de agenda, las actividades generales <strong>presenciales</strong> organizadas para celebrar el <a href="https://11defebrero.org/">Día de la Mujer y la Niña en la Ciencia</a>.</p>
+<p>En la tabla puedes filtrar por localización, fecha, tipo de público, etc.</p>
+<p>Pincha en la actividad para más detalles.</p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
+<hr />
+<div id="buscar-en-mapa" class="section level3">
+<h3><a href="#mapa-de-actividades-presenciales">Buscar en mapa</a></h3>
+</div>
+<div id="buscar-en-tabla" class="section level3">
+<h3><a href="#tabla-de-actividades-presenciales">Buscar en tabla</a></h3>
+</div>
+<div id="ver-todas" class="section level3">
+<h3><a href="actividades_todas.html#detalles" target="_blank">Ver todas</a></h3>
+<hr />
+</div>
+<div id="mapa-de-actividades-presenciales" class="section level3">
+<h3>Mapa de actividades presenciales</h3>
+<p>En este mapa interactivo puedes consultar las actividades presenciales programadas. La localización de los centros en el mapa es aproximada, corresponde al código postal en el que se ubican.</p>
+<p>Si pinchas en cualquier icono podrás acceder a más información sobre cada actividad.</p>
+<p>Si tienes problema al visualizar el mapa, por favor, prueba con otro navegador.</p>
+<div id="htmlwidget-43ec82f8ee6366c6fa8e" style="width:100%;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-43ec82f8ee6366c6fa8e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[43.52035447,43.52035447,43.52035447,43.52035447,42.5983683,41.76716564,40.32696441,42.74430154],[-5.295275934,-5.295275934,-5.295275934,-5.295275934,-5.611359962,-2.472862119,-3.768673414,-1.670054257],{"iconUrl":{"data":"https://raw.githubusercontent.com/11defebrero/assets/main/images/logo_presenciales.png","index":0},"iconWidth":20,"iconHeight":30,"iconAnchorX":10,"iconAnchorY":15},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<a href='https://11defebrero.org/2021/12/09/cientificas-a-conciencia-3/(opens in a new tab)' target='_blank'>CIENTÍFICAS A CONCIENCIA<\/a><br/>Exposición<br/>MUSEO DEL JURÁSICO DE ASTURIAS<br/>2, 3, 4, 5, 6, 9, 10, 11, 12, 13  febrero  2022","<a href='https://11defebrero.org/2021/12/09/busqueda-de-cientificas/' target='_blank'>\"Búsqueda de científicas\"<\/a><br/>Taller<br/>Museo del Jurásico de Asturias<br/>5, 6, 12, 13  febrero  2022","<a href='https://11defebrero.org/2021/12/09/la-huella-de-la-mujer-en-la-paleontologia-3/' target='_blank'>“LA HUELLA DE LA MUJER EN LA PALEONTOLOGÍA”<\/a><br/>VISITA GUIADA<br/>Museo del Jurásico de Asturias<br/>5, 6  febrero  2022","<a href='https://11defebrero.org/2021/12/09/descubre-el-muja-con-nuestra-cientifica-4/' target='_blank'>DESCUBRE EL MUJA CON NUESTRA CIENTÍFICA<\/a><br/>VISITA GUIADA POR EL MUSEO<br/>Museo del Jurásico de Asturias<br/>12, 13  febrero  2022","<a href='https://11defebrero.org/2021/12/09/poderosas-como-inspirar-a-otras-ninas-con-nuestros-proyectos-tecnologicos/' target='_blank'>Poderosas: Cómo inspirar a otras niñas con nuestros proyectos tecnológicos<\/a><br/>Charla, Exposición, Posibilidad on-line por restricciones covid<br/>Fundación Telice Magnetic Anomaly- Fab Lab León<br/>12  febrero  2022","<a href='https://11defebrero.org/2021/12/09/biologas-quimicas-que-cambiaron-el-mundo/' target='_blank'>Biólogas-Químicas que cambiaron el mundo<\/a><br/>Charla<br/>AMPA COLEGIO LAS PEDRIZAS<br/>11  febrero  2022","<a href='https://11defebrero.org/2021/12/09/el-enigma-de-agustina/' target='_blank'>El Enigma de Agustina<\/a><br/>Mesa redonda<br/>Universidad Carlos III de Madrid<br/>8  febrero  2022","<a href='https://11defebrero.org/2021/12/09/asociacion-de-la-industria-navarra/' target='_blank'>Asociación de la Industria Navarra<\/a><br/>Charla<br/>Asociación de la Industria Navarra"],null,{"showCoverageOnHover":true,"zoomToBoundsOnClick":true,"spiderfyOnMaxZoom":true,"removeOutsideVisibleBounds":true,"spiderLegPolylineOptions":{"weight":1.5,"color":"#222","opacity":0.5},"freezeAtZoom":false},null,["CIENTÍFICAS A CONCIENCIA","\"Búsqueda de científicas\"","“LA HUELLA DE LA MUJER EN LA PALEONTOLOGÍA”","DESCUBRE EL MUJA CON NUESTRA CIENTÍFICA","Poderosas: Cómo inspirar a otras niñas con nuestros proyectos tecnológicos","Biólogas-Químicas que cambiaron el mundo","El Enigma de Agustina","Asociación de la Industria Navarra"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[40.32696441,43.52035447],"lng":[-5.611359962,-1.670054257]}},"evals":[],"jsHooks":[]}</script>
+<p><br/></p>
+</div>
+<div id="tabla-de-actividades-presenciales" class="section level3">
+<h3>Tabla de actividades presenciales</h3>
+<p>En esta tabla podéis consultar las actividades presenciales programadas por provincia, municipio, tipo de actividad, etc. Podéis filtrar por varios criterios desde la fila superior (aparecerá una <strong>X</strong> en las columnas que tengan el filtro activado).</p>
+<p>Si pincháis en el nombre del centro podréis acceder a más información útil.</p>
+<p><br/></p>
+<div id="htmlwidget-03f680b18d9d77d4e813" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-03f680b18d9d77d4e813">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["<a href='https://11defebrero.org/2021/12/09/cientificas-a-conciencia-3/(opens in a new tab)' target='_blank'>CIENTÍFICAS A CONCIENCIA<\/a>","<a href='https://11defebrero.org/2021/12/09/busqueda-de-cientificas/' target='_blank'>\"Búsqueda de científicas\"<\/a>","<a href='https://11defebrero.org/2021/12/09/la-huella-de-la-mujer-en-la-paleontologia-3/' target='_blank'>“LA HUELLA DE LA MUJER EN LA PALEONTOLOGÍA”<\/a>","<a href='https://11defebrero.org/2021/12/09/descubre-el-muja-con-nuestra-cientifica-4/' target='_blank'>DESCUBRE EL MUJA CON NUESTRA CIENTÍFICA<\/a>","<a href='https://11defebrero.org/2021/12/09/poderosas-como-inspirar-a-otras-ninas-con-nuestros-proyectos-tecnologicos/' target='_blank'>Poderosas: Cómo inspirar a otras niñas con nuestros proyectos tecnológicos<\/a>","<a href='https://11defebrero.org/2021/12/09/biologas-quimicas-que-cambiaron-el-mundo/' target='_blank'>Biólogas-Químicas que cambiaron el mundo<\/a>","<a href='https://11defebrero.org/2021/12/09/el-enigma-de-agustina/' target='_blank'>El Enigma de Agustina<\/a>","<a href='https://11defebrero.org/2021/12/09/asociacion-de-la-industria-navarra/' target='_blank'>Asociación de la Industria Navarra<\/a>"],["2, 3, 4, 5, 6, 9, 10, 11, 12, 13  febrero  2022","5, 6, 12, 13  febrero  2022","5, 6  febrero  2022","12, 13  febrero  2022","12  febrero  2022","11  febrero  2022","8  febrero  2022","-"],["Asturias","Asturias","Asturias","Asturias","León","Soria","Madrid","Navarra"],["33328, COLUNGA","33328, COLUNGA","33328, COLUNGA","33328, COLUNGA","24010, SAN ANDRÉS DEL RABANEDO (LEON)","42001, SORIA","28911, LEGANÉS","31191, PAMPLONA"],["Exposición","Taller","VISITA GUIADA","VISITA GUIADA POR EL MUSEO","Charla, Exposición, Posibilidad on-line por restricciones covid","Charla","Mesa redonda","Charla"],["Público general","Público familiar","Público general","Público general","Público familiar, Público infantil","Para centros educativos. Primaria","Para centros educativos. ESO, Para centros educativos. Bachillerato","Para centros educativos. Primaria"],["MUSEO DEL JURÁSICO DE ASTURIAS","Museo del Jurásico de Asturias","Museo del Jurásico de Asturias","Museo del Jurásico de Asturias","Fundación Telice Magnetic Anomaly- Fab Lab León","AMPA COLEGIO LAS PEDRIZAS","Universidad Carlos III de Madrid","Asociación de la Industria Navarra"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Título<\/th>\n      <th>Fecha<\/th>\n      <th>Provincia<\/th>\n      <th>Localidad<\/th>\n      <th>Tipo actividad<\/th>\n      <th>Dirigido a<\/th>\n      <th>Organiza<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<p>Última actualización: 2021-12-14</p>
+</div>
+</div>
+<div id="no-presenciales" class="section level2">
+<h2>NO PRESENCIALES</h2>
+<p>Aquí puedes buscar, a modo de agenda, las actividades generales <strong>no presenciales</strong> organizadas para celebrar el <a href="https://11defebrero.org/">Día de la Mujer y la Niña en la Ciencia</a>.</p>
+<p>En la tabla puedes filtrar por localización, fecha, tipo de público, etc.</p>
+<p>Pincha en la actividad para más detalles.</p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
+<hr />
+<div id="ver-todas-1" class="section level3">
+<h3><a href="actividades_todas.html#detalles" target="_blank">Ver todas</a></h3>
+<hr />
+</div>
+<div id="tabla-de-actividades-no-presenciales" class="section level3">
+<h3>Tabla de actividades no presenciales</h3>
+<p>En esta tabla podéis consultar las actividades no presenciales programadas por tipo de actividad, público, etc. Podéis filtrar por varios criterios desde la fila superior (aparecerá una <strong>X</strong> en las columnas que tengan el filtro activado).</p>
+<p>Si pincháis en el nombre del centro podréis acceder a más información útil.</p>
+<p><br/></p>
+<div id="htmlwidget-cbca188eae8ae9c59305" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cbca188eae8ae9c59305">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"disabled\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Título<\/th>\n      <th>Fecha<\/th>\n      <th>Tipo actividad<\/th>\n      <th>Dirigido a<\/th>\n      <th>Organiza<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<p>Última actualización: 2021-12-14</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
