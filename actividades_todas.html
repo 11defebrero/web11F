@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Actividades - mapa y tabla</title>
+
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
+<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
+<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><img src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
+<style type="text/css">
+
+h1 {
+  color: #00BCB4;
+}
+h2 {
+  color: #00BCB4;
+}
+h3 {
+  color: #00BCB4;
+}
+h4 {
+  color: #00BCB4;
+}
+h5 {
+  color: #00BCB4;
+}
+li {
+  color: #00BCB4;
+}
+</style>
+<div id="actividades11f" class="section level1 tabset tabset-fade tabset-pills">
+<h1 class="tabset tabset-fade tabset-pills">Actividades11F</h1>
+<p>Aquí puedes consultar todas las actividades organizadas por librerías, comercios, bibliotecas, empresas, o cualquier institución distinta a un centro educativo con motivo del Día de la Mujer y la Niña en la Ciencia.</p>
+<p>Estas actividades no están organizadas por la Iniciativa 11 de Febrero, así que cualquier duda que tengas sobre ellas, debes dirigirte al contacto indicado en cada una de ellas.</p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
+<p>Datos actualizados el 28/12/2022</p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Online</h3>
+<hr />
+<div id="detalles" class="section level5">
+<div>
+<h5><strong>#YoFisicaEnTikTok</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/yofisicaentiktok/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>#YoFisicaEnTikTok</strong></h5>
+<p><strong>Dirigido a: </strong>Público familiar, Para centros educativos: Infantil, Primaria, ESO, Bachillerato, FP, Universidad.</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/yofisicaentiktok-2/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Mujeres en las TIC</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/mujeres-en-las-tic/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>¡Fotónica en 5 minutos! Día Internacional de la Mujer y de la Niña en la ciencia</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/fotonica-en-5-minutos-dia-internacional-de-la-mujer-y-de-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+</div>
+<div id="detalles" class="section level3">
+<h3>Andalucía</h3></div>
+<hr />
+<div>
+<h5><strong>La historia del clima en las cuevas</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/la-historia-del-clima-en-las-cuevas/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>1er concurso de disfraces de científicas y científicos ciudad de Algeciras</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/1er-concurso-de-disfraces-de-cientificas-y-cientificos-ciudad-de-algeciras/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Aragón</h3></div>
+<hr />
+<div>
+<h5><strong>Escaparate de comercio</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/escaparate-de-comercio/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Dejando Huella</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/dejando-huella/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Asturias</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Canarias</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Cantabria</h3></div>
+<hr />
+<div>
+<h5><strong>‘Expandiendo la ciencia’ Especial charlas 11F: ‘A hombros de GigantAs’ y ‘Las científicas en el cine y la tv’</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/expandiendo-la-ciencia-especial-charlas-11f-a-hombros-de-gigantas-y-las-cientificas-en-el-cine-y-la-tv/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Castilla - La Mancha</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Castilla y León</h3></div>
+<hr />
+<div>
+<h5><strong>Tras los pasos de pioneras de la ciencia</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/tras-los-pasos-de-pioneras-de-la-ciencia-4/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>4ª edición Expociencia</strong></h5>
+<p><strong>Dirigido a: </strong>Para público general y familiar. Para centros educativos: Primaria, ESO, Bachillerato, FP, Universidad</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/4a-edicion-expociencia/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Cataluña</h3></div>
+<hr />
+<div>
+<h5><strong>Charlas mujeres STEM en sector automoción</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Infantil, Primaria, ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/charlas-mujeres-stem-en-sector-automocion/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Ceuta</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Melilla</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Comunidad de Madrid</h3></div>
+<hr />
+<div>
+<h5><strong>¡Visítanos en IdiPAZ por el Día Internacional de la Mujer y la niña en la Ciencia!</strong></h5>
+<p><strong>Dirigido a: </strong>Público general, Para centros educativos: Primaria, ESO, Bachillerato, FP, Universidad, Otros</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/visitanos-en-idipaz-por-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Investigación: ¿profesión o pasión?</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/investigacion-profesion-o-pasion/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Mujeres en las TIC</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/mujeres-en-las-tic/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>¿A qué se dedica una Infancientífica?</strong></h5>
+<p><strong>Dirigido a: </strong>Público general</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/a-que-se-dedica-una-infancientifica/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Reconociendo la ansiedad: el reto de las personas con severas necesidades de apoyo</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/reconociendo-la-ansiedad-el-reto-de-las-personas-con-severas-necesidades-de-apoyo/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Cambia el foco: #CientíficasSinFiltro</strong></h5>
+<p><strong>Dirigido a: </strong>Público general, Universidad</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/cambia-el-foco-cientificassinfiltro/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Gymkana Ciencia de los Datos uc3m</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/gymkana-ciencia-de-los-datos-uc3m/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>El papel de la mujer en la ciencia</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/el-papel-de-la-mujer-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>Científicas de la URJC en el aula</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Infantil, Primaria, ESO, Bachillerato y FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/11/cientificas-de-la-urjc-en-el-aula/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Comunidad Valenciana</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Extremadura</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Galicia</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Baleares</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>La Rioja</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Navarra</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>País Vasco</h3></div>
+<hr />
+<h5><strong>El Instituto Nacional de Seguridad y Salud en el Trabajo celebra el Día internacional de la Mujer y la Niña en la Ciencia</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/el-instituto-nacional-de-seguridad-y-salud-en-el-trabajo-celebra-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div>
+<h5><strong>“Mujer + Ciencia= un viaje en el tiempo”</strong></h5>
+<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
+<p><strong><a href="https://11defebrero.org/2022/12/28/mujer-ciencia-un-viaje-en-el-tiempo/" target="_blank">Más información aquí</a></strong></p>
+</div>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Región de Murcia</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
+<hr />
+<div id="detalles" class="section level3">
+<h3>Fuera de España</h3></div>
+<hr />
+<p>Por ahora no se ha inscrito ninguna actividad fuera de España. </p>
+<hr />
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
