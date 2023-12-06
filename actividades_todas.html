@@ -11,15 +11,15 @@
 
 
 
-<title>Actividades11F - Edición 2023</title>
+<title>Actividades11F - listado</title>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="home/alex/Projects/11F/web11F/libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="home/alex/Projects/11F/web11F/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="home/alex/Projects/11F/web11F/libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/web11F/libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="home/alex/Projects/11F/web11F/libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="home/alex/Projects/11F/web11F/libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -29,35 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="libs/navigation-1.1/tabsets.js"></script>
-<link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="libs/highlightjs-9.12.0/highlight.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
-<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.css" rel="stylesheet" />
-<link href="libs/leaflet-markercluster-1.0.5/MarkerCluster.Default.css" rel="stylesheet" />
-<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.js"></script>
-<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.freezable.js"></script>
-<script src="libs/leaflet-markercluster-1.0.5/leaflet.markercluster.layersupport.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
-<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
-<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="home/alex/Projects/11F/web11F/libs/navigation-1.1/tabsets.js"></script>
+<link href="home/alex/Projects/11F/web11F/libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="home/alex/Projects/11F/web11F/libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -78,6 +52,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -107,6 +82,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
 pre code {
   padding: 0;
 }
@@ -126,8 +104,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -135,16 +113,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -193,7 +164,8 @@ pre code {
 </div>
 
 
-<p><img src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
+<p><img
+src="https://raw.githubusercontent.com/11defebrero/assets/main/images/banner11F.png" /></p>
 <style type="text/css">
 
 h1 {
@@ -215,1197 +187,325 @@ li {
   color: #00BCB4;
 }
 </style>
-<div id="actividades11f" class="section level1 tabset tabset-fade tabset-pills">
-<h1 class="tabset tabset-fade tabset-pills">Actividades11F</h1>
-<p>Aquí puedes consultar todas las actividades organizadas por librerías, comercios, bibliotecas, empresas, o cualquier institución distinta a un centro educativo con motivo del Día de la Mujer y la Niña en la Ciencia.</p>
-<p>Estas actividades no están organizadas por la Iniciativa 11 de Febrero, así que cualquier duda que tengas sobre ellas, debes dirigirte al contacto indicado en cada una de ellas.</p>
-<p>Si detectas algún error en estos datos, por favor, escribe a: <a href="mailto:correccionesweb11F@gmail.com" class="email">correccionesweb11F@gmail.com</a></p>
-<p>Datos actualizados el 05/02/2023</p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Online</h3>
-<hr />
-<div id="detalles" class="section level5">
-<div>
-<h5><strong>#YoFisicaEnTikTok</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/yofisicaentiktok/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>#YoFisicaEnTikTok</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Para centros educativos: Infantil, Primaria, ESO, Bachillerato, FP, Universidad.</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/yofisicaentiktok-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mujeres en las TIC</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/mujeres-en-las-tic/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¡Fotónica en 5 minutos! Día Internacional de la Mujer y de la Niña en la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/fotonica-en-5-minutos-dia-internacional-de-la-mujer-y-de-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>HPCNow! se une a las celebraciones del 11F</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/hpcnow-se-une-a-las-celebraciones-del-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla Girls4STEM Professional Nuria Lloret especial #11Febrero</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/charla-girls4stem-professional-nuria-lloret-especial-11febrero/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Concurso «Descubre mujeres científicas»</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/concurso-descubre-mujeres-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla STEAM con Paola Guimeráns: E-textiles</strong></h5>
-<p><strong>Dirigido a: </strong>Charla online transmitida en directo en Twitch, Facebook y Youtube</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/charla-steam-con-paola-guimerans-e-textiles/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>#Ellas son EEZA_CSIC</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/ellas-son-eeza_csic/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>A conversation with women researchers: how to make your way in science</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/a-conversation-with-women-researchers-how-to-make-your-way-in-science/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Wikimaratón Mujer y Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. Bachillerato, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/wikimaraton-mujer-y-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>FUNDACIÓN SÉNECA. CIENTÍFICAS COMO TÚ</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/fundacion-seneca-cientificas-como-tu/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Vídeo motivacional de la youtuber Valeria Corrales</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/video-motivacional-de-la-youtuber-valeria-corrales/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>MURCIANAS DE DINAMITA. MUJERES PARA LA HISTORIA DE LA REGIÓN</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/murcianas-de-dinamita-mujeres-para-la-historia-de-la-region/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>ENTREVISTA A SONIA MEDINA</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/entrevista-a-sonia-medina/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Living Science_Investigadoras contra el cáncer</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/living-science_investigadoras-contra-el-cancer/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Entrega de Premios «Científicas antes que yo»</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/entrega-de-premios-cientificas-antes-que-yo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Scape Room Científicas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/scape-room-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Quieres saber a qué se dedica una ingeniera? ¡Te lo contamos!</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/quieres-saber-a-que-se-dedica-una-ingeniera-te-lo-contamos-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Quiero ser científica ¿Cómo comenzar la aventura?</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/quiero-ser-cientifica-como-comenzar-la-aventura/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Editatona 11F: ¡Científicas aragonesas a Wikipedia!</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/editatona-11f-cientificas-aragonesas-a-wikipedia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Ciencia y patriarcado: del origen de la vida al ecofeminismo</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/ciencia-y-patriarcado-del-origen-de-la-vida-al-ecofeminismo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Igualdad en Geociencias</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/igualdad-en-geociencias/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Chatea con académicas del Instituto de Astronomía, UNAM</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/chatea-con-academicas-del-instituto-de-astronomia-unam/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Lanternas da ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/lanternas-da-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-</div>
-<div>
-<h5><strong>“La ciencia es de todas”</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/la-ciencia-es-de-todas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Campaña en redes sociales para visibilizar las científicas que dieron nombre a las ayudas de RRHH</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/campana-en-redes-sociales-para-visibilizar-las-cientificas-que-dieron-nombre-a-las-ayudas-de-rrhh/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>SORTEO de Libros sobre Mujeres Científicas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/sorteo-de-libros-sobre-mujeres-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>INVENTORAS DEL MUNDO</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/inventoras-del-mundo-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>#CientíficasSinFiltro</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/cientificassinfiltro/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Andalucía</h3></div>
-<hr />
-<div>
-<h5><strong>La historia del clima en las cuevas</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/la-historia-del-clima-en-las-cuevas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>1er concurso de disfraces de científicas y científicos ciudad de Algeciras</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/1er-concurso-de-disfraces-de-cientificas-y-cientificos-ciudad-de-algeciras/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Jornada mujer y ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/jornada-mujer-y-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Jornada mujer y ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/jornada-mujer-y-ciencia-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Exposición Maneras de Mirar</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. Primaria, Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/exposicion-maneras-de-mirar/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>La extinción de los dinosaurios y el cambio climático</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/la-extincion-de-los-dinosaurios-y-el-cambio-climatico/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¡Seamos científic@s por un día!</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP. </p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/seamos-cientifics-por-un-dia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>11F: ¿Qué hacen los científic@s? +Talleres «Triboeléctricas»</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/11f-que-hacen-los-cientifics-talleres-triboelectricas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>11F: ¿Qué hacen los científic@s? +Talleres «Triboeléctricas»</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/11f-que-hacen-los-cientifics-talleres-triboelectricas-3/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Una científica en tu cole andaluz</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/una-cientifica-en-tu-cole-andaluz/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Exposición fotográfica de mujeres referentes y emisión del documental «Picture a Scientist»</strong></h5>
-<p><strong>Dirigido a: </strong>Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/exposicion-fotografica-de-mujeres-referentes-y-emision-del-documental-picture-a-scientist/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Ciclo de charlas para conmemorar el día Internacional de la mujer y la niña en la Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/ciclo-de-charlas-para-conmemorar-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Aragón</h3></div>
-<hr />
-<div>
-<h5><strong>Escaparate de comercio</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/escaparate-de-comercio/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Dejando Huella</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/dejando-huella/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Exposición científica ¿Hay alguna científica en la sala?</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/exposicion-cientifica-hay-alguna-cientifica-en-la-sala/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller para cuidar el planeta y visibilizar a la Mujer en la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/taller-para-cuidar-el-planeta-y-visibilizar-a-la-mujer-en-la-ciencia-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Exposición Visibilizando mujeres científicas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/exposicion-visibilizando-mujeres-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mes de la Mujer y la Niña en la Ciencia en ámbito cultural de El Corte Inglés de Zaragoza</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/mes-de-la-mujer-y-la-nina-en-la-ciencia-en-ambito-cultural-de-el-corte-ingles-de-zaragoza-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>6 mujeres en 60 minutos</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/6-mujeres-en-60-minutos/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¡BUSCAMOS A LAS CIENTÍFICAS DEL FUTURO! 2023</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil, Para centros educativos. Primaria, Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/buscamos-a-las-cientificas-del-futuro-2023/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Paseos con ciencia . Escaparates 11F. Ruta 1</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/paseos-con-ciencia-escaparates-11f-ruta-1/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Paseos con Ciencia de los Escaparates 11F. Ruta 2</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/paseos-con-ciencia-de-los-escaparates-11f-ruta-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Escaparates 11F</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/escaparates-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>CIENTÍFICAS PARA LA CIUDAD</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. FP, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/cientificas-para-la-ciudad/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller de casitas iluminadas con energía solar fotovoltaica</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/taller-de-casitas-iluminadas-con-energia-solar-fotovoltaica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>DIÁLOGO “LA CIENCIA DESDE DIVERSAS PERSPECTIVAS III”</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/dialogo-la-ciencia-desde-diversas-perspectivas-iii/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller divulgativo “¿a qué sabe una manzana?”</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/taller-divulgativo-a-que-sabe-una-manzana/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Inauguración exposición “Iluminando la ciencia: paleontólogas e ilustradoras”</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/inauguracion-exposicion-iluminando-la-ciencia-paleontologas-e-ilustradoras/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Presentación del libro “Geólogas. Historia de las pioneras en las Ciencias de la Tierra» de Guiomar Calvo</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/presentacion-del-libro-geologas-historia-de-las-pioneras-en-las-ciencias-de-la-tierra-de-guiomar-calvo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mesa redonda “Mujeres paleoilustradoras”</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/mesa-redonda-mujeres-paleoilustradoras/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Ruta 3. Paseos con Ciencia de los Escaparates 11F</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/ruta-3-paseos-con-ciencia-de-los-escaparates-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Ruta 4. Paseos con Ciencia de los Escaparates 11F</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/ruta-4-paseos-con-ciencia-de-los-escaparates-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Andromachi Papanicolau, técnica de laboratorio</strong></h5>
-<p><strong>Dirigido a: </strong>Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/andromachi-papanicolau-tecnica-de-laboratorio/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller familiar: Ciencia y cuentos</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/taller-familiar-ciencia-y-cuentos/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Juego en familia: Hi Score, Mujer y ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/juego-en-familia-hi-score-mujer-y-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>El mundo secreto de Nanoelia. Cuentacuentos y taller científico con Jerusalén Jaime Lahoz</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-con-jerusalen-jaime-lahoz/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>RETOS DE CIENCIA: GRANDES APORTACIONES DE MUJERES CIENTÍFICAS</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/retos-de-ciencia-grandes-aportaciones-de-mujeres-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mensajeros de la Salud Global. «Escape box» científica</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/mensajeros-de-la-salud-global-escape-box-cientifica-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca Pública Municipal José Martí)</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-3/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca-Rockoteca de Casetas)</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca Pública Javier Tomeo (El Rabal))</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca Andresa Casamayor)</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-4/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca Santa Orosia)</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-5/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>«El mundo secreto de Nanoelia». Cuentacuentos y taller científico (Biblioteca Pública Félix Romeo (Parque Goya))</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-mundo-secreto-de-nanoelia-cuentacuentos-y-taller-cientifico-6/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Leo y coloreo: 11 de febrero: Día Internacional de la Mujer y la Niña en la Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/leo-y-coloreo-11-de-febrero-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Y si quiero ser científica?</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/y-si-quiero-ser-cientifica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Con tres niñas muy curiosas. Taller de Ciencia en los cuentos 11F</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/con-tres-ninas-muy-curiosas-taller-de-ciencia-en-los-cuentos-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Pan y ciencia. Experimentos en la panadería</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/pan-y-ciencia-experimentos-en-la-panaderia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Asturias</h3></div>
-<hr />
-<div>
-<h5><strong>SALINASSTEM</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO, FP</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/salinasstem/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Masterclass MASSTEAM</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/masterclass-massteam/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>La Ciencia del Carbono a Hombros de Gigantas</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/la-ciencia-del-carbono-a-hombros-de-gigantas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>A hombros de gigantes</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/a-hombros-de-gigantes/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Día de la mujer y la niña en la ciencia en Soto del Barco</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/dia-de-la-mujer-y-la-nina-en-la-ciencia-en-soto-del-barco/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Canarias</h3></div>
-<hr />
-<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Cantabria</h3></div>
-<hr />
-<div>
-<h5><strong>‘Expandiendo la ciencia’ Especial charlas 11F: ‘A hombros de GigantAs’ y ‘Las científicas en el cine y la tv’</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/expandiendo-la-ciencia-especial-charlas-11f-a-hombros-de-gigantas-y-las-cientificas-en-el-cine-y-la-tv/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Castilla - La Mancha</h3></div>
-<hr />
-<div>
-<h5><strong>CONCURSO CARTELES «DESCUBRE CIENTIFICAS»</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/concurso-carteles-descubre-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Celebrando el 11 de febrero</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Público infantil, Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/celebrando-el-11-de-febrero/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>CONCURSO “DESCUBRE MUJERES CIENTÍFICAS EN CIUDAD REAL”</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/concurso-descubre-mujeres-cientificas-en-ciudad-real/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Castilla y León</h3></div>
-<hr />
-<div>
-<h5><strong>Tras los pasos de pioneras de la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/tras-los-pasos-de-pioneras-de-la-ciencia-4/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>4ª edición Expociencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para público general y familiar. Para centros educativos: Primaria, ESO, Bachillerato, FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/4a-edicion-expociencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>STEM Day, celebración 11f</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/steam-day-celebracion-11f/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Puede la luz indicarnos el contenido en azúcares en las uvas?</strong></h5>
-<p><strong>Dirigido a: </strong>Para público general y centros educativos: ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/puede-la-luz-indicarnos-el-contenido-en-azucares-en-las-uvas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Energía en femenino</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/energia-en-femenino/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Wangari Muta Maathai: La “ Mujer Árbol” visita Cascanueces</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/17/wangari-muta-maathai-la-mujer-arbol-visita-cascanueces/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Explora el universo de las científicas en los escaparates de León</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/explora-el-universo-de-las-cientificas-en-los-escaparates-de-leon/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Estrellas con-ciencia, Abrapalabra cuentacuentos</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/estrellas-con-ciencia-abrapalabra-cuentacuentos/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla Ilustrada</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/charla-ilustrada/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>LAS DETECTIVES DEL CÁNCER ¿QUIÉN CAUSÓ EL CÁNCER DE MAMA?</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/las-detectives-del-cancer-quien-causo-el-cancer-de-mama/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>musiARQ arquitectas</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/musiarq-arquitectas-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Cataluña</h3></div>
-<hr />
-<div>
-<h5><strong>Charlas mujeres STEM en sector automoción</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Infantil, Primaria, ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/charlas-mujeres-stem-en-sector-automocion/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Representación teatral “Diálogo sobre la naturaleza del Universo, con la participación de eminentes astrónomos de la época modernista”</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/representacion-teatral-dialogo-sobre-la-naturaleza-del-universo-con-la-participacion-de-eminentes-astronomos-de-la-epoca-modernista/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>6º sLHam de científicas del IDIBELL</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/6o-slham-de-cientificas-del-idibell/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Ceuta</h3></div>
-<hr />
-<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Melilla</h3></div>
-<hr />
-<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Comunidad de Madrid</h3></div>
-<hr />
-<div>
-<h5><strong>¡Visítanos en IdiPAZ por el Día Internacional de la Mujer y la niña en la Ciencia!</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos: Primaria, ESO, Bachillerato, FP, Universidad, Otros</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/visitanos-en-idipaz-por-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Investigación: ¿profesión o pasión?</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/investigacion-profesion-o-pasion/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mujeres en las TIC</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/mujeres-en-las-tic/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿A qué se dedica una Infancientífica?</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/a-que-se-dedica-una-infancientifica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Reconociendo la ansiedad: el reto de las personas con severas necesidades de apoyo</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/reconociendo-la-ansiedad-el-reto-de-las-personas-con-severas-necesidades-de-apoyo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Cambia el foco: #CientíficasSinFiltro</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/cambia-el-foco-cientificassinfiltro/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Gymkana Ciencia de los Datos uc3m</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/gymkana-ciencia-de-los-datos-uc3m/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>El papel de la mujer en la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/el-papel-de-la-mujer-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Científicas de la URJC en el aula</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Infantil, Primaria, ESO, Bachillerato y FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/11/cientificas-de-la-urjc-en-el-aula/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Viernes STEM UC3M</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/talleres-mujeres-cientificas-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Talleres «Mujeres Científicas 2»</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO, Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/viernes-stem-uc3m/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>2017-2023 what has changed for women in STEM?</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/2017-2023-what-has-changed-for-women-in-stem/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Presentación «101 relatos de la enfermería»</strong></h5>
-<p><strong>Dirigido a: </strong>Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/presentacion-101-relatos-de-la-enfermeria/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Conociendo a referentes femeninos cercanos en ciencia y tecnología</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Infantil, Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/conociendo-a-referentes-femeninos-cercanos-en-ciencia-y-tecnologia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Exposición Mujeres Científicas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/exposicion-mujeres-cientificas-7/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Día Internacional de la Mujer y la Niña en la Ciencia en Radio Enlace</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/17/dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia-en-radio-enlace/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Ruta de Turismo Científico en Madrid «Nieves González Barrio»</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/17/ruta-de-turismo-cientifico-en-madrid-nieves-gonzalez-barrio/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Viernes STEM UC3M</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/viernes-stem-uc3m-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Aprendiendo de la naturaleza: la ciencia de los bosques</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Infantil, Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/aprendiendo-de-la-naturaleza-la-ciencia-de-los-bosques/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Mujeres en Metalurgia: Acercándonos al maravilloso mundo de los materiales metálicos</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/mujeres-en-metalurgia-acercandonos-al-maravilloso-mundo-de-los-materiales-metalicos/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Punto de interés bibliográfico sobre el día internacional de la mujer y la niña en la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/punto-de-interes-bibliografico-sobre-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Encuéntralas en la historia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/encuentralas-en-la-historia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>El sonido del viento: charla concierto sobre Música y Física</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-sonido-del-viento-charla-concierto-sobre-musica-y-fisica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Es magia o es física? Las científicas del IFIMAC os invitan a descubrirlo con sus talleres</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Público infantil, Para centros educativos. Infantil, Para centros educativos. Primaria, Para centros educativos. ESO, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/es-magia-o-es-fisica-las-cientificas-del-ifimac-os-invitan-a-descubrirlo-con-sus-talleres/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>A Discussion of the Abortion Ban in Texas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/a-discussion-of-the-abortion-ban-in-texas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Math on Trial: How Math Can Be Used to Favor the Prosecution</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/math-on-trial-how-math-can-be-used-to-favor-the-prosecution/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Cuándo se puede desanudar un nudo?</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/cuando-se-puede-desanudar-un-nudo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Examining Prison Gerrymandering in the United States through a Mathematical Lens</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/examining-prison-gerrymandering-in-the-united-states-through-a-mathematical-lens/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Zombie outbreak: The efficiency of testing & vaccines</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/zombie-outbreak-the-efficiency-of-testing-vaccines/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Una historia de flores raras: mujeres que ilustraron la historia natural</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/una-historia-de-flores-raras-mujeres-que-ilustraron-la-historia-natural/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Coloquio: «Carolyn Bertozzi: cuando la química hace click » por Fernando Herranz</strong></h5>
-<p><strong>Dirigido a: </strong>Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/coloquio-carolyn-bertozzi-cuando-la-quimica-hace-click-por-fernando-herranz/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Niñas y niños con conCiencia de Tren. Conociendo la ciencia e innovación del ferrocarril</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/inas-y-ninos-con-conciencia-de-tren-conociendo-la-ciencia-e-innovacion-del-ferrocarril/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Científicas pasado, presente y futuro en la escuela</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria, Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/cientificas-pasado-presente-y-futuro-en-la-escuela/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla – Coloquio: «¿Quiero ser científica?»</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. ESO, Para centros educativos. Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/charla-coloquio-quiero-ser-cientifica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Science Dating</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/science-dating-4/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Gymkana de laboratorios del CIEMAT</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/gymkana-de-laboratorios-del-ciemat/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Visita Unidad de Innovación Biomédica y Laboratorio Nacional de Fusión</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/visita-unidad-de-innovacion-biomedica-y-laboratorio-nacional-de-fusion/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Coloquio 11F: «Maryna Viazovska, Medalla Fields por sus resultados en empaquetamiento de esferas»</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/coloquio-11f-maryna-viazovska-medalla-fields-por-sus-resultados-en-empaquetamiento-de-esferas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Acércate a la nanociencia: lo pequeño es diferente</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/acercate-a-la-nanociencia-lo-pequeno-es-diferente-5/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>¿Por qué un Día Internacional de la Mujer y la Niña en la Ciencia?</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/por-que-un-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Visita nuestros laboratorios</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/visita-nuestros-laboratorios/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Lectura de Género desde la Química Computacional</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/lectura-de-genero-desde-la-quimica-computacional/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charlas con Geocientíficas</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/charlas-con-geocientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Panel con mujeres investigadoras</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/panel-con-mujeres-investigadoras/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Arantza Leal – Mujeres pioneras en el mundo de la Ornitología</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/arantza-leal-mujeres-pioneras-en-el-mundo-de-la-ornitologia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Laboratorio de cuentos La mujer y niña en la ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/laboratorio-de-cuentos-la-mujer-y-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>TECH4Girls</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/tech4girls/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>La Gestión: Un pilar fundamental en la Investigación</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. FP</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/la-gestion-un-pilar-fundamental-en-la-investigacion/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Innovando en femenino: Mujeres en Montegancedo</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/innovando-en-femenino-mujeres-en-montegancedo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Haciendo visible lo invisible: Ciclo de charlas ‘Mujer y Niña en la Ciencia’ del IFT en la Residencia de Estudiantes</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Para centros educativos. ESO, Para centros educativos. Bachillerato, Para centros educativos. FP, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/haciendo-visible-lo-invisible-ciclo-de-charlas-mujer-y-nina-en-la-ciencia-del-ift-en-la-residencia-de-estudiantes/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Comunidad Valenciana</h3></div>
-<hr />
-<div>
-<h5><strong>VII Jornada Nacional de Investigadoras en Enfermedades Raras</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/vii-jornada-nacional-de-investigadoras-en-enfermedades-raras/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Moscas en la investigación médica</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/charla-como-ser-mujer-madre-e-investigadora-sin-morir-en-el-intento-por-eva-ortega-paino/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla «Cómo ser mujer, madre e investigadora sin morir en el intento», por Eva Ortega Paíno</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/moscas-en-la-investigacion-medica/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Noche de Ciencia: Medicina, sexo y género</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/noche-de-ciencia-medicina-sexo-y-genero/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Pa-Ciencia (que ya es jueves): LA NEUROCIENCIA DETRÁS DE UN PAR DE COPAS</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/pa-ciencia-que-ya-es-jueves-la-neurociencia-detras-de-un-par-de-copas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>11 de febrero en el Instituto de Neurociencias</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/11-de-febrero-en-el-instituto-de-neurociencias/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Charla: La mujer en la ciencia: DOPAMINA</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/charla-la-mujer-en-la-ciencia-dopamina/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Extremadura</h3></div>
-<hr />
-<div>
-<h5><strong>Día Internacional de la Niña y la Mujer en la Ciencia en Montánchez</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/dia-internacional-de-la-nina-y-la-mujer-en-la-ciencia-en-montanchez/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Desarrollo urbano sostenible y participación ciudadana</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/desarrollo-urbano-sostenible-y-participacion-ciudadana/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>El futuro es ciencia: Escape Room científico</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-futuro-es-ciencia-escape-room-cientifico/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>El futuro es ciencia: Mujeres y niñas en las STEM, presente y futuro</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/el-futuro-es-ciencia-mujeres-y-ninas-en-las-stem-presente-y-futuro/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Debate: El papel de la mujer en la Ciencia en la actualidad y Película: Ágora</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/debate-el-papel-de-la-mujer-en-la-ciencia-en-la-actualidad-y-pelicula-agora/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>CÓDIGO 3 CIENTÍFICAS</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/codigo-3-cientificas-2/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>GRANDES MUJERES DE CIENCIA</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/grandes-mujeres-de-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Galicia</h3></div>
-<hr />
-<div>
-<h5><strong>Día da Muller e a Nena na Ciencia: Encontro con Eva Candal</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/dia-da-muller-e-a-nena-na-ciencia-encontro-con-eva-candal/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Masterclass de Física de Partículas: Día Internacional da Muller e a Nena na Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Bachillerato</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/masterclass-de-fisica-de-particulas-dia-internacional-da-muller-e-a-nena-na-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>11 de febrero. Día Internacional de la Mujer y la Niña en la Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Público familiar, Público infantil, Otros</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/11-de-febrero-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>De cañas coas #MulleresDaCiencia</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/de-canas-coas-mulleresdaciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Baleares</h3></div>
-<hr />
-<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
-<hr />
-<div id="detalles" class="section level3">
-<h3>La Rioja</h3></div>
-<hr />
-<div>
-<h5><strong>Sesiones de cine</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/sesiones-de-cine/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Espectáculo “Ciencia a lo grande”</strong></h5>
-<p><strong>Dirigido a: </strong>Público familiar</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/espectaculo-ciencia-a-lo-grande/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller de Cianotipia – ¡Tu jardín en azul!</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/taller-de-cianotipia-tu-jardin-en-azul/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Taller de Cianotipia – Botánica en azul</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/taller-de-cianotipia-botanica-en-azul/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>GLOBAL WOMEN´S BREAKFAST</strong></h5>
-<p><strong>Dirigido a: </strong>Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/global-womens-breakfast/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Bienvenid@s a las revolución digital</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/bienvenids-a-las-revolucion-digital/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Navarra</h3></div>
-<hr />
-<p>Por ahora no se ha inscrito ninguna actividad en esta comunidad. </p>
-<hr />
-<div id="detalles" class="section level3">
-<h3>País Vasco</h3></div>
-<hr />
-<h5><strong>El Instituto Nacional de Seguridad y Salud en el Trabajo celebra el Día internacional de la Mujer y la Niña en la Ciencia</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: ESO</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/el-instituto-nacional-de-seguridad-y-salud-en-el-trabajo-celebra-el-dia-internacional-de-la-mujer-y-la-nina-en-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Emakumeak Zientzian 2023</strong></h5>
-<p><strong>Dirigido a: </strong>Para todos los públicos</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/emakumeak-zientzian-2023/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>“Mujer + Ciencia= un viaje en el tiempo”</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos: Primaria, ESO, Bachillerato, FP</p>
-<p><strong><a href="https://11defebrero.org/2022/12/28/mujer-ciencia-un-viaje-en-el-tiempo/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>Arkeologia emakumeekin/Arqueología con arqueólogas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general, Universidad</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/arkeologia-emakumeekin-arqueologia-con-arqueologas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Región de Murcia</h3></div>
-<hr />
-<div>
-<h5><strong>Descubriendo científicas</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/descubriendo-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>ROSTROS MEDITERRÁNEOS DE LA CIENCIA</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/rostros-mediterraneos-de-la-ciencia/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>ENTRE CIENTÍFICAS</strong></h5>
-<p><strong>Dirigido a: </strong>Público general</p>
-<p><strong><a href="https://11defebrero.org/2023/02/02/entre-cientificas/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>ENCUENTRO CON MARÍA CUARTERO</strong></h5>
-<p><strong>Dirigido a: </strong>Para centros educativos. ESO</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/encuentro-con-maria-cuartero/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div>
-<h5><strong>CUENTACUENTOS «ROSA PIONERA INGENIERA»</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil</p>
-<p><strong><a href="https://11defebrero.org/2023/02/05/cuentacuentos-rosa-pionera-ingeniera/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
-<div id="detalles" class="section level3">
-<h3>Fuera de España</h3></div>
-<hr />
-<h5><strong>Acercando la ciencia a las niñas: Instituto de Ecología Aplicada (México)</strong></h5>
-<p><strong>Dirigido a: </strong>Público infantil, Para centros educativos. Primaria</p>
-<p><strong><a href="https://11defebrero.org/2023/01/18/acercando-la-ciencia-a-las-ninas-instituto-de-ecologia-aplicada/" target="_blank">Más información aquí</a></strong></p>
-</div>
-<hr />
+<div id="actividades-11f" class="section level1">
+<h1>Actividades-11F</h1>
+<p>Aquí puedes consultar todas las actividades organizadas por
+librerías, comercios, bibliotecas, empresas, o cualquier institución
+distinta a un centro educativo con motivo del <a
+href="https://11defebrero.org/">Día de la Mujer y la Niña en la
+Ciencia</a>.</p>
+<p>Estas actividades no están organizadas por la Iniciativa 11 de
+Febrero, así que cualquier duda que tengas sobre ellas, debes dirigirte
+al contacto indicado en cada una de ellas.</p>
+<p>Si detectas algún error en estos datos, por favor, escribe a: <a
+href="mailto:correccionesweb11F@gmail.com"
+class="email">correccionesweb11F@gmail.com</a></p>
+<p>Datos actualizados el 2023-12-06 con un total de 8 actividades
+inscritas.</p>
+<!-- # Actividades CENTROS11F -->
+<!-- ¿Organizáis actividades internamente en vuestro centro educativo para celebrar el [Día de la Mujer y la Niña en la Ciencia](https://11defebrero.org/)? Entonces sois un Centro11F. -->
+<!-- Si tenéis ya todo organizado, podéis comunicárnoslo a través del formulario que encontrarás en [este enlace](https://11defebrero.org/centros-educativos/). -->
+<!-- Si detectas algún error en estos datos, por favor, escribe a: correccionesweb11F@gmail.com -->
+<hr />
+<div id="buscar-en-mapa" class="section level3">
+<h3><a href="actividades_mapa_tabla.html#mapa-actividades11F"
+target="_blank">Buscar en mapa</a></h3>
+</div>
+<div id="buscar-en-tabla" class="section level3">
+<h3><a href="actividades_mapa_tabla.html#tabla-actividades11F"
+target="_blank">Buscar en tabla</a></h3>
+<hr />
+</div>
+<div id="actividades-presenciales" class="section level3">
+<h3>Actividades Presenciales</h3>
+<hr />
+<div id="referencia-2" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-2' target='_self'>2</a></h5>
+<p><strong>Título de la actividad</strong>: Científicas de la URJC en el
+aula</p>
+<p><strong>Tipo de actividad</strong>: Taller;Charla</p>
+<p><strong>Descripción</strong>: Se celebrarán diversos encuentros con
+científicas en centros educativos de la Comunidad de Madrid para poner
+en valor y dar visibilidad al trabajo que realizan las investigadoras de
+la Universidad Rey Juan Carlos (URJC). Habrá cuatro áreas temáticas: o
+Soy científica (experiencias personales y profesionales) o ¿Y si estudio
+una carrera STEM? o En Ciencias sociales y Jurídicas, Arte y Humanidades
+también se investiga o Científicas de la Salud</p>
+<p><strong>Dirigido a</strong>: Para centros educativos. Primaria;Para
+centros educativos. ESO;Para centros educativos. Bachillerato;Para
+centros educativos. FP</p>
+<p><strong>Fecha</strong>: 5 de febrero;6 de febrero;7 de febrero;8 de
+febrero;9 de febrero</p>
+<p><strong>Hora</strong>: 09:00 - 14:00</p>
+<p><strong>Comunidad Autónoma</strong>: Comunidad de Madrid</p>
+<p><strong>Provincia</strong>: Madrid</p>
+<p><strong>Localidad</strong>: 28900, Varios municipios</p>
+<p><strong>Tipo de espacio</strong>: Centros educativos</p>
+<p><strong>Requerimientos</strong>: Requiere reserva</p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-4" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-4' target='_self'>4</a></h5>
+<p><strong>Título de la actividad</strong>: Programa de radio con
+entrevistas a mujeres científicas</p>
+<p><strong>Tipo de actividad</strong>: programa de radio</p>
+<p><strong>Descripción</strong>: Realización de un programa de radio
+relacionado con el día de la mujer y la ciencia. Como nuestra asociación
+es de León, queríamos contactar con Sara García Alonso (astronauta) y
+con otras científicas de la Universidad de León y jefas de empresas de
+biotecnología.</p>
+<p><strong>Dirigido a</strong>: Público general</p>
+<p><strong>Fecha</strong>: No aplica</p>
+<p><strong>Hora</strong>: 17:00 - 21:00</p>
+<p><strong>Comunidad Autónoma</strong>: Castilla y León</p>
+<p><strong>Provincia</strong>: León</p>
+<p><strong>Localidad</strong>: 24007, León</p>
+<p><strong>Tipo de espacio</strong>: Radio universitaria de León “Ateneo
+Radio”</p>
+<p><strong>Requerimientos</strong>: Ya tenemos público para esta
+actividad</p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-5" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-5' target='_self'>5</a></h5>
+<p><strong>Título de la actividad</strong>: Acércate a la Nanociencia:
+lo pequeño es diferente</p>
+<p><strong>Tipo de actividad</strong>: Taller</p>
+<p><strong>Descripción</strong>: Las investigadoras de ‘IMDEA
+Nanociencia’ nos acercan la Nanociencia y la Nanotecnología. Visita
+nuestros laboratorios y sumérgete en el mundo nanoscópico para descubrir
+que <em>lo pequeño es diferente</em>.</p>
+<p><strong>Dirigido a</strong>: Para centros educativos. Infantil;Para
+centros educativos. Primaria;Para centros educativos. ESO</p>
+<p><strong>Fecha</strong>: 9 de febrero</p>
+<p><strong>Hora</strong>: 10:00 - 11:30</p>
+<p><strong>Comunidad Autónoma</strong>: Comunidad de Madrid</p>
+<p><strong>Provincia</strong>: Madrid</p>
+<p><strong>Localidad</strong>: 28049, Madrid</p>
+<p><strong>Tipo de espacio</strong>: Instituto Madrileño de Estudios
+Avanzados en Nanociencia (IMDEA Nanociencia)</p>
+<p><strong>Requerimientos</strong>: Requiere reserva</p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-6" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-6' target='_self'>6</a></h5>
+<p><strong>Título de la actividad</strong>: I JORNADA UNIVERSIDAD
+EUROPEA DE MUJER Y LA NIÑA EN LA CIENCIA</p>
+<p><strong>Tipo de actividad</strong>: Jornadas;Feria de asociaciones de
+mujeres de ciencia y de liderazgo</p>
+<p><strong>Descripción</strong>: El objetivo de esta jornada es celebrar
+el Día de la Mujer y la Niña en la Ciencia, ofreciendo un espacio de
+interacción y aprendizaje entre las participantes y la comunidad
+universitaria. Se realizarán diversas actividades, y entre ellas:</p>
+<p>-FERIA de Asociaciones de Mujeres en la Ciencia: “Conectando Redes y
+Creando Oportunidades” a la que asistirán diversas asociaciones de
+mujeres en la ciencia para resaltar sus esfuerzos por fomentar la
+igualdad de género y la participación de mujeres en sus respectivos
+campos. Cada asociación contará con una mesa de exhibición en la que
+podrán mostrar su trabajo, repartir información y responder a preguntas.
+Algunas de las representantes de las asociaciones que vengan
+participarán en un:</p>
+<p>-DIÁLOGO ponencia en dicha jornada sobre “La Carrera Investigadora
+para la Mujer, en España y Experiencia personal”.</p>
+<p>-ASISTENCIA de la Viceconsejera de Universidades, Investigación y
+Ciencia de la Comunidad de Madrid.</p>
+<p>-MESA redonda con ponentes de la Universidad Europea destacadas en la
+investigación.</p>
+<p>-FOTO de las mujeres de la comunidad universitaria unidas y de
+cualquier área de Ciencia, incluyendo estudiantes, profesoras,
+investigadoras y personal administrativo, haciendo de este momento un
+acto conmemorativo que destaque lo importante que es fomentar el papel
+de la Mujer y la Niña. Tendrá lugar en el Campus de Villaviciosa de
+Odón.</p>
+<p>-EXPOSICIÓN del árbol de las científicas: expuesto durante toda la
+jornada en el hall del edificio B. Mostrará en sus ramas la exposición
+de trabajos y foto de investigadoras de la UE.</p>
+<p>-MONÓLOGO de divulgadora científica para la clausura de la
+Jornada.</p>
+<p>-COCKTAIL y espacio de networking para las asistentes.</p>
+<p><strong>Dirigido a</strong>: Universidad</p>
+<p><strong>Fecha</strong>: 9 de febrero</p>
+<p><strong>Hora</strong>: 09:00 - 15:00</p>
+<p><strong>Comunidad Autónoma</strong>: Comunidad de Madrid</p>
+<p><strong>Provincia</strong>: Madrid</p>
+<p><strong>Localidad</strong>: 28670, Villaviciosa de Odón</p>
+<p><strong>Tipo de espacio</strong>: Universidad Europea de Madrid,
+Campus Villaviciosa de Odón</p>
+<p><strong>Requerimientos</strong>: Ya tenemos público para esta
+actividad</p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-10" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-10' target='_self'>10</a></h5>
+<p><strong>Título de la actividad</strong>: Viernes STEM para niñas y
+jóvenes</p>
+<p><strong>Tipo de actividad</strong>: Taller</p>
+<p><strong>Descripción</strong>: Talleres impartidos por profesorado
+universitario que abordan de forma amena y rigurosa campos como la
+robótica, telecomunicaciones, energías renovables, matemáticas,
+ciberseguridad, electrónica… Una manera de descubrir nuevas vocaciones
+por las stem en niñas y jóvenes que pronto decidirán su recorrido
+académico y profesional.</p>
+<p><strong>Dirigido a</strong>: Para centros educativos. ESO;Para
+centros educativos. Bachillerato</p>
+<p><strong>Fecha</strong>: 9 de febrero</p>
+<p><strong>Hora</strong>: 18:00 - 20:00</p>
+<p><strong>Comunidad Autónoma</strong>: Comunidad de Madrid</p>
+<p><strong>Provincia</strong>: Madrid</p>
+<p><strong>Localidad</strong>: 28911, Leganés</p>
+<p><strong>Tipo de espacio</strong>: Escuela Politécnica Superior del
+campus de Leganés de la Universidad Carlos III de Madrid</p>
+<p><strong>Requerimientos</strong>: Requiere reserva</p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-11" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-11' target='_self'>11</a></h5>
+<p><strong>Título de la actividad</strong>: El sonido del viento: charla
+concierto sobre música y física</p>
+<p><strong>Tipo de actividad</strong>: Charla;Charla concierto</p>
+<p><strong>Descripción</strong>: La divulgadora, física y pianista
+Almudena Martín Castro nos narrará de forma amena curiosidades sobre los
+instrumentos de viento, su origen y evolución a través de la historia y
+sus principios físicos. Estará acompañada por el quinteto de viento Alma
+Ensemble que interpretará fragmentos de obras clásicas y bandas sonoras,
+desde Debussy y Puccini hasta bandas sonoras Jon Williams. Una actividad
+para descubrir los vínculos entre la música y la física y sus vasos
+comunicantes. Martes 20 de febrero. Necesaria inscripción.</p>
+<p><strong>Dirigido a</strong>: Para centros educativos. ESO;Para
+centros educativos. Bachillerato</p>
+<p><strong>Fecha</strong>: No aplica</p>
+<p><strong>Hora</strong>: 11:30 - 13:00</p>
+<p><strong>Comunidad Autónoma</strong>: Comunidad de Madrid</p>
+<p><strong>Provincia</strong>: Madrid</p>
+<p><strong>Localidad</strong>: 28911, Leganés</p>
+<p><strong>Tipo de espacio</strong>: Auditorio Universidad Carlos III de
+Madrid</p>
+<p><strong>Requerimientos</strong>: Requiere reserva</p>
+<p><br/></p>
+</div>
+</div>
+<div id="actividades-no-presenciales" class="section level2">
+<h2>Actividades No Presenciales</h2>
+<hr />
+<div id="referencia-0" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-0' target='_self'>0</a></h5>
+<p><strong>Título de la actividad</strong>: STEMinist for future</p>
+<p><strong>Tipo de actividad</strong>: Artículos en un blog;Programa de
+radio;Vídeo</p>
+<p><strong>Descripción</strong>: “Es muy difícil querer ser algo que
+nunca has visto”. Si la presencia de mujeres en materiales educativos no
+llega al 7.6% y menos de un 30% de las plazas en las carreras STEM son
+ocupadas por mujeres, entonces… ¿qué niña va a querer ser
+científica?</p>
+<p>Este proyecto consiste en una serie entrevistas audiovisuales a
+mujeres científicas (biólogas, físicas, matemáticas, médicas…) con las
+que podréis conocer más de cerca cuál es el trabajo de estas
+investigadoras y sus descubrimientos. También nos contarán los problemas
+que se han encontrado por el hecho de ser mujeres y cómo los han
+enfrentado. Estas entrevistas están disponibles en todas las redes
+sociales (YouTube, Instagram, TikTok, Twitter, iVoox)</p>
+<p>Aún está lejos la igualdad de género en el ámbito STEM, pero ahora
+sabemos que no estamos solas, que otras mujeres ya han abierto el camino
+y que en nuestra mano está que estos porcentajes empiecen a cambiar.</p>
+<p><strong>Dirigido a</strong>: Público general;Público familiar;Para
+centros educativos. ESO;Para centros educativos. Bachillerato;Para
+centros educativos. FP;Universidad</p>
+<p><strong>Fecha</strong>: No aplica</p>
+<p><strong>Hora</strong>: No aplica - NA</p>
+<p><strong>Email</strong>: <a href="mailto:steminist.uam@gmail.com"
+class="email">steminist.uam@gmail.com</a></p>
+<p><strong>Mas información</strong>: <a
+href="https://linktr.ee/steminist4future"
+class="uri">https://linktr.ee/steminist4future</a></p>
+<p><br/></p>
+<hr />
+</div>
+<div id="referencia-1" class="section level5">
+<h5><strong>Referencia</strong>:
+<a name='referencia-1' target='_self'>1</a></h5>
+<p><strong>Título de la actividad</strong>: #YoFisicaEnLaCalle</p>
+<p><strong>Tipo de actividad</strong>: Vídeo;Campaña</p>
+<p><strong>Descripción</strong>: Se acerca un nuevo 11 de febrero, Día
+Internacional de la Mujer y la Niña en la Ciencia, y un año más os
+retamos a participar en #YoFisica, el certamen del IFT en el que las y
+los más jóvenes sois protagonistas y nos habláis sobre ciencia y sobre
+el trabajo de científicas reconocidas en el campo de la física.</p>
+<p>La de este año es una edición muy especial para el IFT, ¡celebramos
+un lustro de #YoFisicas!</p>
+<p>Comenzamos este recorrido el 11 de febrero de 2020 con #YoFisica,
+donde 291 mujeres y niñas nos contasteis por qué os gusta la física, y
+continuamos con #YouTubersPorUnDia , #YoFisicaEnComic y, en febrero de
+2023, #YoFisicaEnTikTok; en total casi mil contribuciones en forma de
+vídeos y dibujos, con la participación de varios miles de personas,
+¡todo un lujo!</p>
+<p>Por este éxito queremos, desde el IFT, daros de nuevo las gracias a
+todas las niñas y niños, chicas y chicos que habéis participado todos
+estos años, y agradecer también a todas las madres, padres y docentes
+que habéis ayudado y animado para hacer de esta iniciativa algo
+excepcional.</p>
+<p>Y para celebrarlo, este año os retamos a llevar #YoFisica a la calle,
+poniendo a prueba los conocimientos sobre ciencia y científicas de <a
+href="mailto:vuestr@s" class="email">vuestr@s</a> <a
+href="mailto:compañer@s" class="email">compañer@s</a> de instituto o
+colegio o la gente de vuestros barrios.</p>
+<p>Con #YoFisicaEnLaCalle queremos que salgáis al patio de vuestro cole
+o instituto o a la calle de vuestro barrio y preguntéis sobre física a
+todas las personas que os crucéis. Grabad las entrevistas con un móvil y
+enviadnos el vídeo que las recoge al correo <a
+href="mailto:yofisica.ift@gmail.com"
+class="email">yofisica.ift@gmail.com</a>.</p>
+<p>¿Qué preguntas hacer? En esta Web y en este documento os proponemos
+algunas, podéis elegir una o varias o crear preguntas nuevas que tengan
+que ver con la física y las físicas. En las ediciones anteriores de
+#YoFisica tenemos mucha información sobre varias científicas que podéis
+utilizar para elaborar vuestro propio cuestionario.</p>
+<p>Hay algunas normas que debemos respetar para utilizar las imágenes
+que salgan en los vídeos. Todas las personas menores de 14 años cuyas
+imágenes aparezcan necesitan un consentimiento para participar firmado
+por sus padres o madres (podéis descargarlo aquí). Las personas menores
+de edad que sean mayores de 14 pueden firmar ellas mismas este otro
+permiso. Cuando se trate de adultos bastará con que les pidáis su
+consentimiento para usar las imágenes y grabéis la respuesta.
+Necesitamos que nos enviéis toda esa documentación antes de publicar los
+vídeos en nuestra Web y nuestro canal de Youtube.</p>
+<p>Como cada año, haremos un vídeo recopilatorio de las contribuciones
+que colgaremos en el canal de Youtube del IFT el 11 de febrero de 2024.
+Todos vuestros vídeos aparecerán también en el canal IFT 11 Febrero y en
+esta galería de nuestra página Web.</p>
+<p>Si tenéis interés en la iniciativa podéis contactarnos al correo <a
+href="mailto:yofisica.ift@gmail.com"
+class="email">yofisica.ift@gmail.com</a>.</p>
+<p>Tenéis de plazo hasta el 21 de enero, ¡os esperamos!</p>
+<p><strong>Dirigido a</strong>: Público general;Público familiar;Para
+centros educativos. Primaria;Para centros educativos. ESO;Para centros
+educativos. Bachillerato;Para centros educativos. FP;Universidad</p>
+<p><strong>Fecha</strong>: No aplica</p>
+<p><strong>Hora</strong>: No aplica - NA</p>
+<p><strong>Email</strong>: <a href="mailto:yofisica.ift@gmail.com"
+class="email">yofisica.ift@gmail.com</a></p>
+<p><strong>Mas información</strong>: <a
+href="https://members.ift.uam-csic.es/ed/yofisicaenlacalle/"
+class="uri">https://members.ift.uam-csic.es/ed/yofisicaenlacalle/</a></p>
+<p><br/></p>
+</div>
+</div>
+</div>
+
+
+
+
 </div>
 
 <script>
